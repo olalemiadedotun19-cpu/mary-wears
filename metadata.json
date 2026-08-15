@@ -1,0 +1,6 @@
+{
+  "name": "MARY — Maison de Haute Couture",
+  "description": "Premier Nigerian luxury haute couture & contemporary fashion house. Featuring over 200+ indigenous garments across Aso-Oke, Gele, Grand Agbada, Senator suits, Guys Tops, and Adire denim with interactive 3D WebGL mannequin studio, 360° inspection, and dedicated pages.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
