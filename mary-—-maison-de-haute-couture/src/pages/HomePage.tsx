@@ -120,9 +120,9 @@ export const HomePage: React.FC<HomePageProps> = ({
           {/* Tagline */}
           <div className="inline-flex items-center space-x-2 bg-black/70 border border-[#c8a97e]/40 px-3 py-1 rounded-full mb-3 backdrop-blur-md animate-fade-in-up" style={{ animationDelay: '100ms' }}>
             <Sparkles className="w-3 h-3 text-[#c8a97e]" />
-            <span className="text-[10px] font-bold tracking-widest text-[#c8a97e] uppercase">
-              200+ HAND-FINISHED AMERICAN LUXURY SILHOUETTES • MADE TO YOUR MEASURE
-            </span>
+             <span className="text-[10px] font-bold tracking-widest text-[#c8a97e] uppercase">
+               HAND-FINISHED AMERICAN LUXURY SILHOUETTES • MADE TO YOUR MEASURE
+             </span>
           </div>
 
           {/* Main Title */}
