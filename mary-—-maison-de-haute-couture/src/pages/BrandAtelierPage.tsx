@@ -75,9 +75,9 @@ export const BrandAtelierPage: React.FC<BrandAtelierPageProps> = ({
               "Maison Mary was born out of a refusal to treat American heritage textiles as mere regional folklore. We craft our clothes with the mathematical precision of true haute couture, honoring the master weavers and metal artisans who shape every heirloom by hand."
           </p>
            <div className="text-xs text-[#c8a97e] font-serif italic">— Mary Halbert, Founder & Creative Director</div>
-           <div className="flex items-center justify-center gap-3 pt-2">
-             <img src="https://i.ibb.co/CsWQyyz4/jawadmd.jpg" alt="Mary Halbert" className="h-16 w-16 object-cover rounded-full border border-white/10" />
-             <img src="https://i.ibb.co/r2r2WXWF/jawadmd.jpg" alt="Mary Halbert" className="h-16 w-16 object-cover rounded-full border border-white/10" />
+           <div className="flex items-center justify-center gap-4 pt-4">
+             <img src="https://i.ibb.co/CsWQyyz4/jawadmd.jpg" alt="Mary Halbert" className="h-40 w-40 object-cover border border-white/10 shadow-lg" />
+             <img src="https://i.ibb.co/r2r2WXWF/jawadmd.jpg" alt="Mary Halbert" className="h-40 w-40 object-cover border border-white/10 shadow-lg" />
            </div>
         </div>
 
