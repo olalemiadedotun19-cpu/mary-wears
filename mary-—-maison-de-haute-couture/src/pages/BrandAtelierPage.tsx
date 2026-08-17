@@ -74,7 +74,7 @@ export const BrandAtelierPage: React.FC<BrandAtelierPageProps> = ({
           <p className="text-sm sm:text-base text-neutral-300 font-normal leading-relaxed font-sans-clean">
               "Maison Mary was born out of a refusal to treat American heritage textiles as mere regional folklore. We craft our clothes with the mathematical precision of true haute couture, honoring the master weavers and metal artisans who shape every heirloom by hand."
           </p>
-          <div className="text-xs text-[#c8a97e] font-serif italic">— Mary Olalemi, Founder & Creative Director</div>
+           <div className="text-xs text-[#c8a97e] font-serif italic">— Mary Halbert, Founder & Creative Director</div>
         </div>
 
         {/* 4 Artisanal Craft Pillars Grid */}
