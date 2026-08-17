@@ -71,15 +71,6 @@ export const ShopCollectionPage: React.FC<ShopCollectionPageProps> = ({
   const [currentPage, setCurrentPage] = useState<number>(1);
   const itemsPerPage = 24;
 
-  // Category counts
-  const categoryCounts = useMemo(() => {
-    const counts: Record<string, number> = { All: PRODUCTS.length };
-    PRODUCTS.forEach((p) => {
-      counts[p.category] = (counts[p.category] || 0) + 1;
-    });
-    return counts;
-  }, []);
-
   const filteredProducts = useMemo(() => {
     return PRODUCTS.filter((p) => {
       const matchCat = selectedCategory === 'All' || p.category === selectedCategory;
@@ -146,9 +137,9 @@ export const ShopCollectionPage: React.FC<ShopCollectionPageProps> = ({
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white tracking-tight">
                 Authentic American <span className="text-[#c8a97e] italic">Contemporary Collection</span>
                </h1>
-               <p className="text-xs sm:text-sm text-neutral-300 max-w-3xl mt-2 leading-relaxed">
-                 Discover over <strong className="text-white">200+ masterfully crafted luxury garments</strong> across American silk gowns, Italian wool suits, artisanal handbags, designer footwear, and architectural outerwear.
-               </p>
+                <p className="text-xs sm:text-sm text-neutral-300 max-w-3xl mt-2 leading-relaxed">
+                  Discover masterfully crafted luxury garments across American silk gowns, Italian wool suits, artisanal handbags, designer footwear, and architectural outerwear.
+                </p>
             </div>
 
             {/* Quick Guarantees */}
@@ -169,12 +160,10 @@ export const ShopCollectionPage: React.FC<ShopCollectionPageProps> = ({
         <div className="space-y-3">
           <div className="flex items-center justify-between text-xs text-neutral-400 font-bold uppercase tracking-wider">
             <span>SELECT COUTURE CATEGORY</span>
-            <span className="text-[#c8a97e]">{PRODUCTS.length} Total Pieces Registered</span>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-2">
             {CATEGORIES.map((cat) => {
-              const count = categoryCounts[cat.id] || 0;
               const isActive = selectedCategory === cat.id;
               return (
                 <button
@@ -194,9 +183,6 @@ export const ShopCollectionPage: React.FC<ShopCollectionPageProps> = ({
                   <div>
                     <span className="text-[11px] font-bold block leading-tight line-clamp-2">
                       {cat.label}
-                    </span>
-                    <span className={`text-[10px] block mt-1 ${isActive ? 'text-black/80 font-mono font-bold' : 'text-[#c8a97e]'}`}>
-                      {count} items
                     </span>
                   </div>
                 </button>
@@ -379,7 +365,7 @@ export const ShopCollectionPage: React.FC<ShopCollectionPageProps> = ({
               onClick={resetAllFilters}
               className="px-5 py-2.5 bg-[#c8a97e] text-black text-xs font-bold rounded uppercase tracking-wider hover:bg-[#dfc49c] transition-colors"
             >
-              Reset Filters & Show All 200+ Outfits
+               Reset Filters & Show All Outfits
             </button>
           </div>
         ) : layoutMode === 'list' ? (
@@ -560,9 +546,6 @@ export const ShopCollectionPage: React.FC<ShopCollectionPageProps> = ({
                       <div className="flex items-baseline justify-between">
                         <span className="text-lg font-serif font-bold text-[#c8a97e]">
                           {formatPrice(product.priceUSD, currentCurrency)}
-                        </span>
-                        <span className="text-[10px] text-neutral-400">
-                          {product.availableSizes.length} Sizes
                         </span>
                       </div>
 

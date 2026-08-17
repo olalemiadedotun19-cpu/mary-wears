@@ -47,7 +47,6 @@ export const HomePage: React.FC<HomePageProps> = ({
       id: "Women's Dresses & Gowns",
       title: 'Silk Gowns & Evening Dresses',
       desc: 'Hand-finished American silk ball gowns, illusion mermaid dresses, and architectural evening wear designed for red carpets and formal galas.',
-      count: '36 Garments',
       image: imgUsf01,
       tag: 'Evening'
     },
@@ -55,7 +54,6 @@ export const HomePage: React.FC<HomePageProps> = ({
       id: "Women's Tops & Blouses",
       title: 'Silk Blouses & Designer Tops',
       desc: 'Luxury silk camp-collar shirts, hand-embroidered silk blouses, and modern American luxury tops for day-to-night elegance.',
-      count: '30 Garments',
       image: imgUsf06,
       tag: 'New Arrivals'
     },
@@ -63,7 +61,6 @@ export const HomePage: React.FC<HomePageProps> = ({
       id: "Men's Suits & Blazers",
       title: 'Tailored Suits & Blazers',
       desc: 'Bespoke Italian wool two-button suits, velvet smoking jackets, and hand-woven silk-blend blazers cut in our master ateliers.',
-      count: '35 Garments',
       image: imgUsf10,
       tag: 'Bespoke'
     },
@@ -71,7 +68,6 @@ export const HomePage: React.FC<HomePageProps> = ({
       id: "Men's Shirts & Tees",
       title: 'Shirts & Casual Tees',
       desc: 'Premium silk and cotton shirts with signature embroidery, plus heavyweight organic American heritage tees for relaxed luxury.',
-      count: '30 Garments',
       image: imgUsf16,
       tag: 'Casual Luxury'
     },
@@ -79,7 +75,6 @@ export const HomePage: React.FC<HomePageProps> = ({
       id: 'Handbags & Accessories',
       title: 'Handbags & Leather Accessories',
       desc: 'Handcrafted American leather handbags, sculptural accessories, and solid brass hardware pieces from our artisans.',
-      count: '32 Garments',
       image: imgUsf20,
       tag: 'Artisan'
     },
@@ -87,7 +82,6 @@ export const HomePage: React.FC<HomePageProps> = ({
       id: 'Footwear',
       title: 'American Luxury Footwear',
       desc: 'Hand-crafted Italian leather oxfords, silk-embroidered ballet flats, and architectural heel boots for every occasion.',
-      count: '28 Garments',
       image: imgUsf25,
       tag: 'Heirloom'
     },
@@ -95,7 +89,6 @@ export const HomePage: React.FC<HomePageProps> = ({
       id: 'Women\'s Coats & Outerwear',
       title: 'Coats & Outerwear',
        desc: 'Structured wool cape coats, leather-trimmed denim jackets, and metallic puffer coats tailored for American climates.',
-      count: '28 Garments',
       image: imgUsf23,
       tag: 'Outerwear'
     },
@@ -103,7 +96,6 @@ export const HomePage: React.FC<HomePageProps> = ({
       id: 'Activewear & Loungewear',
       title: 'Activewear & Loungewear',
       desc: 'Premium cashmere lounge sets, technical fleece jackets, and performance wear blending comfort with contemporary American style.',
-      count: '24 Garments',
       image: imgUsf35,
       tag: 'Lifestyle'
     }
@@ -116,7 +108,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         {/* Background Editorial Visuals */}
         <div className="absolute inset-0 z-0">
           <img
-            src={imgUsf01}
+            src="https://i.ibb.co/SD50mgwx/jawadmd.jpg"
             alt="Maison Mary American Luxury Fashion Campaign"
             className="w-full h-full object-cover object-top sm:object-center opacity-45 scale-105 transform hover:scale-100 transition-transform duration-1000 ease-out filter contrast-125"
           />
@@ -207,7 +199,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             onClick={() => onNavigate('shop')}
             className="text-[11px] font-bold text-[#c8a97e] hover:underline flex items-center"
           >
-            <span>View All ({PRODUCTS.length})</span>
+            <span>View All</span>
             <ArrowRight className="w-3.5 h-3.5 ml-1" />
           </button>
         </div>
@@ -229,9 +221,6 @@ export const HomePage: React.FC<HomePageProps> = ({
                 <div className="absolute inset-0 bg-gradient-to-t from-[#12121c] via-transparent to-black/30" />
                 <div className="absolute top-1 left-1 bg-[#c8a97e] text-black px-1.5 py-0.5 rounded text-[8px] font-bold uppercase shadow">
                   {cat.tag}
-                </div>
-                <div className="absolute top-1 right-1 bg-black/80 px-1.5 py-0.5 rounded text-[8px] text-neutral-300 border border-white/10 font-mono">
-                  {cat.count}
                 </div>
               </div>
 
@@ -268,7 +257,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               onClick={() => onNavigate('shop')}
               className="text-[11px] font-bold text-[#c8a97e] hover:underline flex items-center"
             >
-              <span>View All ({PRODUCTS.length})</span>
+              <span>View All</span>
               <ArrowRight className="w-3.5 h-3.5 ml-1" />
             </button>
           </div>
