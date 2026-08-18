@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingBag, Calendar, Menu, X, ChevronDown, Sparkles, Globe, Compass, Heart, HelpCircle, Eye, Shirt, RotateCw, Layers, Home, Info, ChevronRight, type LucideIcon } from 'lucide-react';
+import { ShoppingBag, Calendar, Menu, X, ChevronDown, Sparkles, Globe, Heart, Layers, Home, Info, ChevronRight, type LucideIcon } from 'lucide-react';
 import { Currency, AppPage } from '../types';
 import { CURRENCY_RATES } from '../data/products';
 
@@ -11,7 +11,6 @@ interface HeaderProps {
   onOpenCart: () => void;
   onOpenWishlist: () => void;
   onOpenBooking: () => void;
-  onOpenTutorial: () => void;
   onNavigate: (page: AppPage) => void;
   currentPage: AppPage;
 }
@@ -24,7 +23,6 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenCart,
   onOpenWishlist,
   onOpenBooking,
-  onOpenTutorial,
   onNavigate,
   currentPage
 }) => {
@@ -144,17 +142,6 @@ export const Header: React.FC<HeaderProps> = ({
                 ))}
               </nav>
 
-              {/* Quick Tutorial / How-It-Works Button */}
-              <button
-                id="open-tutorial-header-btn"
-                onClick={onOpenTutorial}
-                className="inline-flex items-center space-x-1 px-2.5 py-1.5 bg-white/10 hover:bg-[#c8a97e]/20 text-[#c8a97e] text-xs font-medium rounded border border-[#c8a97e]/30 transition-all"
-                title="Open Interactive Guide"
-              >
-                <HelpCircle className="w-3.5 h-3.5" />
-                <span className="hidden md:inline">Interactive Guide</span>
-              </button>
-
               {/* Currency Selector */}
               <div className="relative">
                 <button
@@ -259,23 +246,6 @@ export const Header: React.FC<HeaderProps> = ({
                   className="p-1.5 text-neutral-400 hover:text-white"
                 >
                   <X className="w-6 h-6" />
-                </button>
-              </div>
-
-              {/* Quick Guide Trigger in Mobile */}
-              <div className="py-3 border-b border-white/10">
-                <button
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    onOpenTutorial();
-                  }}
-                  className="w-full py-2.5 px-3 bg-[#c8a97e]/15 border border-[#c8a97e]/30 text-[#c8a97e] text-xs font-semibold rounded flex items-center justify-between"
-                >
-                  <span className="flex items-center space-x-2">
-                    <HelpCircle className="w-4 h-4" />
-                    <span>How to Use This Website</span>
-                  </span>
-                  <span className="text-[10px] font-bold uppercase bg-[#c8a97e] text-black px-1.5 py-0.5 rounded">Guide</span>
                 </button>
               </div>
 

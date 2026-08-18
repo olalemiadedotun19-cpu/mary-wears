@@ -5,7 +5,6 @@ import { ProductDetailModal } from './components/ProductDetailModal';
 import { AtelierBookingModal } from './components/AtelierBookingModal';
 import { CartDrawer } from './components/CartDrawer';
 import { WishlistDrawer } from './components/WishlistDrawer';
-import { InteractiveLiveGuide } from './components/InteractiveLiveGuide';
 import { Product, Currency, CartItem, AppPage } from './types';
 import { PRODUCTS } from './data/products';
 
@@ -34,12 +33,6 @@ export default function App() {
   ]);
   const [wishlistProducts, setWishlistProducts] = useState<Product[]>([PRODUCTS[1]]);
 
-  // Interactive Live Guide Tracking States (Validates real user actions)
-  const [hasOpenedModal, setHasOpenedModal] = useState(false);
-  const [hasInteractedStylist, setHasInteractedStylist] = useState(false);
-  const [hasAddedToBag, setHasAddedToBag] = useState(false);
-  const [guideOpen, setGuideOpen] = useState(true);
-
   // Modals & Drawers
   const [inspectProduct, setInspectProduct] = useState<Product | null>(null);
   const [bookingOpen, setBookingOpen] = useState(false);
@@ -66,7 +59,6 @@ export default function App() {
       }
       return [...prev, { product, colorName, size, monogram, quantity: 1 }];
     });
-    setHasAddedToBag(true);
   };
 
   const handleUpdateQuantity = (index: number, quantity: number) => {
@@ -105,7 +97,6 @@ export default function App() {
 
   const handleInspectProduct = (p: Product) => {
     setInspectProduct(p);
-    setHasOpenedModal(true);
   };
 
   const totalCartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
@@ -121,7 +112,6 @@ export default function App() {
         onOpenCart={() => setCartOpen(true)}
         onOpenWishlist={() => setWishlistOpen(true)}
         onOpenBooking={() => handleOpenBookingWithData()}
-        onOpenTutorial={() => setGuideOpen(true)}
         onNavigate={handleNavigate}
         currentPage={currentPage}
       />
@@ -159,10 +149,7 @@ export default function App() {
         {currentPage === 'stylist' && (
           <StylistStudioPage
             currentCurrency={currentCurrency}
-            onAddToCart={(p, col, sz) => {
-              handleAddToCart(p, col, sz);
-              setHasInteractedStylist(true);
-            }}
+            onAddToCart={handleAddToCart}
             onOpenBooking={handleOpenBookingWithData}
           />
         )}
@@ -221,17 +208,6 @@ export default function App() {
         currentCurrency={currentCurrency}
         onRemoveWishlist={handleToggleWishlist}
         onMoveToCart={handleMoveWishlistToCart}
-      />
-
-      {/* Live Interactive Task-Based Guide with Real Click Verification & Redirections */}
-      <InteractiveLiveGuide
-        isOpen={guideOpen}
-        onClose={() => setGuideOpen(false)}
-        currentCurrency={currentCurrency}
-        onNavigateToPage={handleNavigate}
-        hasOpenedModal={hasOpenedModal}
-        hasInteractedStylist={hasInteractedStylist}
-        hasAddedToBag={hasAddedToBag}
       />
     </div>
   );
